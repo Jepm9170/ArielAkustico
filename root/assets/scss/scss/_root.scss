@@ -1,0 +1,51 @@
+:root {
+	--bs-heading-color: var(--px-heading);
+}
+
+:root, 
+[data-bs-theme=light] {
+	--px-body-bg:			#{$px-body-bg};
+	--px-body-bg-rgb:		#{$px-body-bg-rgb};
+
+	--px-mode:			#{$px-black};
+	--px-mode-rgb:		#{$px-black-rgb};
+	
+	--px-theme:			#{$px-theme};
+	--px-theme-rgb:		#{$px-theme-rgb};
+
+	--px-theme2:		#{$px-theme2};
+	--px-theme3:		#{$px-theme3};
+	--px-theme4:		#{$px-theme4};
+	--px-theme5:		#{$px-theme5};
+	
+	--px-white:			#{$px-white};
+	--px-white-rgb:		#{$px-white-rgb};
+
+	--px-black:			#{$px-black};
+	--px-black-rgb:		#{$px-black-rgb};
+
+	--px-dark:			#{$px-dark};
+	--px-text:			#{$px-text};
+	--px-heading:		#{$px-heading};
+	--px-border:		#{$px-border};
+	--px-gray:			#{$px-gray};
+
+	--px-backdrop-filter:	saturate(180%) blur(20px);
+	--px-gradient: linear-gradient(138deg, #D6DBD0 2.98%, #D6DCD1 28.84%, #F4DCBA 67.18%, #DCC3E1 102.29%);
+
+	--px-header-width:  300px;
+}
+
+[data-bs-theme=dark] {
+	--px-body-bg:			#{$px-black};
+	--px-body-bg-rgb:		#{$px-black-rgb};
+
+	--px-mode:			#{$px-white};
+	--px-mode-rgb:		#{$px-white-rgb};
+
+	--px-text:			#d5d5d5;
+	--px-heading:		#{$px-white};
+		
+}
+
+

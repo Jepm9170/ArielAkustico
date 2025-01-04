@@ -1,0 +1,11 @@
+body,
+html {
+    width: 100%;
+}
+
+.main-wrap {
+    @media(min-width: 1300px){
+        padding-left: var(--px-header-width);
+        margin-left: 20px;
+    }
+}

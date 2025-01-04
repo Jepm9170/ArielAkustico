@@ -1,0 +1,36 @@
+{
+    "name": "project",
+    "version": "0.1.0",
+    "description": "SASS compile|autoprefix|minimize and live-reload dev server using Browsersync for static HTML",
+    "main": "root/index.html",
+    "author": "5t3ph",
+    "scripts": {
+        "build:sass": "sass  --no-source-map root/assets/scss:root/assets/css",
+        "copy:assets": "copyfiles -u 1 \"./root/assets/**/*\" root",
+        "copy:html": "copyfiles -u 1 \"./root/*.html\" root",
+        "copy": "npm-run-all --parallel copy:*",
+        "watch:assets": "onchange \"root/assets/**/*\" -- npm run copy:html",
+        "watch:html": "onchange \"root/*.html\" -- npm run copy:html",
+        "watch:sass": "sass  --no-source-map --watch root/assets/scss:root/assets/css",
+        "watch": "npm-run-all --parallel watch:*",
+        "serve": "browser-sync start --server root --files root",
+        "start": "npm-run-all copy --parallel watch serve",
+        "build": "npm-run-all copy:html build:*",
+        "postbuild": "postcss root/assets/css/*.css -u autoprefixer cssnano -r --no-map"
+    },
+    "dependencies": {
+        "autoprefixer": "^10.4.2",
+        "browser-sync": "^2.27.7",
+        "copyfiles": "^2.4.1",
+        "cssnano": "^5.0.17",
+        "npm-run-all": "^4.1.5",
+        "onchange": "^7.1.0",
+        "owl.carousel": "^2.3.4",
+        "postcss-cli": "^9.1.0",
+        "sass": "^1.49.8"
+    },
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-file-include": "^2.3.0"
+    }
+}
