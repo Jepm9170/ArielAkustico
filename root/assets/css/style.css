@@ -84,7 +84,7 @@ Primary use:    pxdraft
   top: 0;
   left: 0;
   right: 0;
-  padding: 20px 0;
+  padding: 5px 0;
   border-bottom: 1px solid rgba(var(--px-mode-rgb), 0.1);
   z-index: 111;
 }
@@ -1424,6 +1424,230 @@ a {
 
 #spin-logo {
     transform-style: preserve-3d;
+}
+
+/* Set default font color to white */
+body[data-bs-theme="dark"] {
+    color: #ffffff;
+    background-color: #121212; /* Optional: Set a specific dark background color */
+}
+
+/* Ensure all text elements inherit the white color */
+body[data-bs-theme="dark"] h1,
+body[data-bs-theme="dark"] h2,
+body[data-bs-theme="dark"] h3,
+body[data-bs-theme="dark"] h4,
+body[data-bs-theme="dark"] h5,
+body[data-bs-theme="dark"] h6,
+body[data-bs-theme="dark"] p,
+body[data-bs-theme="dark"] a,
+body[data-bs-theme="dark"] li {
+    color: #ffffff;
+}
+
+/* Override Bootstrap's link colors in dark mode */
+body[data-bs-theme="dark"] a {
+    color: #bb86fc; /* Example: A light purple for links */
+}
+
+body[data-bs-theme="dark"] a:hover {
+    color: #ffffff; /* Links turn white on hover */
+}
+
+/* Specific adjustments for buttons, form inputs, etc., if necessary */
+body[data-bs-theme="dark"] .btn-primary {
+    background-color: #bb86fc;
+    border-color: #bb86fc;
+    color: #121212;
+}
+
+body[data-bs-theme="dark"] .btn-primary:hover {
+    background-color: #3700b3;
+    border-color: #3700b3;
+    color: #ffffff;
+}
+
+/* Ensure placeholders in input fields are visible */
+body[data-bs-theme="dark"] ::placeholder {
+    color: #dddddd;
+    opacity: 1; /* Ensures placeholder is fully opaque */
+}
+
+/* Adjust other specific components as needed */
+
+/* Gallery Carousel Styling */
+
+/* Adjust spacing between images */
+.gallery-section .carousel-inner .row {
+    gap: 15px; /* Add space between images */
+}
+
+/* Ensure images are responsive and maintain aspect ratio */
+.gallery-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    object-fit: cover; /* Ensures images cover their container */
+}
+
+/* Customize Carousel Indicators (Dots) */
+.gallery-section .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.gallery-section .carousel-indicators .active {
+    background-color: #2673ff; /* Active dot color */
+}
+
+/* Customize Carousel Controls (Arrows) */
+.gallery-section .carousel-control-prev-icon,
+.gallery-section .carousel-control-next-icon {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.gallery-section .carousel-control-prev-icon:hover,
+.gallery-section .carousel-control-next-icon:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Optional: Add shadows to images for depth */
+.gallery-section img:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+/* Portfolio Carousel Styling */
+
+/* Ensuring consistent spacing between portfolio items */
+.portfolio-section .carousel-inner .row {
+    gap: 15px; /* Adjust the space between items */
+}
+
+/* Portfolio Item Styling */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover; /* Ensures image covers container without distortion */
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Portfolio Overlay Styling */
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    color: #ffffff;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+/* Carousel Indicators (Dots) Customization */
+.portfolio-section .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.portfolio-section .carousel-indicators .active {
+    background-color: #2673ff; /* Active dot color */
+}
+
+/* Carousel Controls (Arrows) Customization */
+.portfolio-section .carousel-control-prev-icon,
+.portfolio-section .carousel-control-next-icon {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.portfolio-section .carousel-control-prev-icon:hover,
+.portfolio-section .carousel-control-next-icon:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .portfolio-section .carousel-inner .row {
+        gap: 10px;
+    }
+
+    .portfolio-section img {
+        border-radius: 5px;
+    }
+
+    .portfolio-overlay {
+        padding: 10px;
+    }
+}
+
+/* Portfolio Carousel Image Styling */
+
+/* Reduce image size */
+.portfolio-section .portfolio-item img {
+    max-width: 90%; /* Adjust this value as needed (e.g., 80%, 85%) */
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Image Section Styling */
+.image-section {
+    /* background-color: #f8f9fa; */ /* Removed to inherit existing background */
+    /* color: #2673ff; */ /* Removed to inherit existing text color */
+}
+
+.image-section .section-title {
+    /* Remove or adjust color to match existing titles */
+    /* color: #2673ff; */ /* Removed to inherit */
+    font-size: 2rem; /* Keep or adjust as needed */
+    font-weight: 600; /* Keep or adjust as needed */
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-section img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .image-section .section-title {
+        font-size: 1.5rem;
+    }
 }
 
 
