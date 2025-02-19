@@ -31,8 +31,8 @@ Primary use:    pxdraft
 
 :root,
 [data-bs-theme=light] {
-  --px-body-bg:	#ffffff;
-  --px-body-bg-rgb:	255, 255, 255;
+  --px-body-bg:	#000000;
+  --px-body-bg-rgb:	0, 0, 0;
   --px-mode:	#000;
   --px-mode-rgb:	0, 0, 0;
   --px-theme:	#FFA800;
@@ -60,8 +60,8 @@ Primary use:    pxdraft
   --px-body-bg-rgb:	0, 0, 0;
   --px-mode:	#fff;
   --px-mode-rgb:	255, 255, 255;
-  --px-text:	#d5d5d5;
-  --px-heading:	#fff;
+  --px-text:	#fff;
+  --px-heading:	#000;
 }
 
 .logo-light {
@@ -842,11 +842,6 @@ body {
   --bs-body-line-height: 1.6;
   overflow-x: hidden;
   background-color: var(--px-body-bg);
-  background-image: url('../img/AA_pic2.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
 }
 
 a {
@@ -1383,7 +1378,61 @@ a {
   font-size: 20px;
 }
 
-/* Add this CSS to style.css */
+/* Add these rules to force white text everywhere */
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+span,
+label,
+.contact-info h3,
+.contact-info label,
+.contact-info p,
+.contact-info a,
+.contact-head h3,
+.contact-head p,
+.section-heading h3,
+.footer h6,
+.footer p,
+.copyright,
+.social-icon a,
+.menu li a,
+.text-reset,
+.contact-form label,
+.form-label,
+textarea::placeholder,
+input::placeholder {
+    color: #ffffff !important;
+}
+
+/* Menu items with opacity */
+.header-start .menu li a {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.header-start .menu li a.active {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+/* Form elements */
+.form-control {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Links */
+a, a:hover {
+    color: #ffffff !important;
+}
+
+/* Social icons */
+.social-icon a {
+    color: #ffffff !important;
+}
+
+/* Override any Bootstrap text colors */
+[class*="text-"] {
+    color: #ffffff !important;
+}
 
 /* Initial spinning animation */
 #spin-logo {
@@ -1647,6 +1696,73 @@ body[data-bs-theme="dark"] ::placeholder {
 @media (max-width: 767px) {
     .image-section .section-title {
         font-size: 1.5rem;
+    }
+}
+
+@media not all and (min-resolution: 0.001dpcm) { 
+    @supports (-webkit-appearance: none) {
+        body {
+            background-size: cover !important;
+            background-position: center !important;
+            background-attachment: scroll !important;
+        }
+    }
+}
+
+/* Add these new styles */
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('../img/AA_pic2.png');
+    background-color: var(--px-body-bg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto; /* Default for desktop */
+    -webkit-transform: translate3d(0,0,0);
+}
+
+/* Desktop screens */
+@media screen and (min-width: 1024px) {
+    .bg-image {
+        background-size: contain;
+        background-position: center center;
+    }
+}
+
+/* Mobile and tablet screens */
+@media screen and (max-width: 1023px) {
+    .bg-image {
+        background-size: cover;
+        min-height: 100vh;
+    }
+}
+
+/* iOS specific fix */
+@supports (-webkit-touch-callout: none) {
+    .bg-image {
+        height: -webkit-fill-available;
+        background-size: cover;
+        background-attachment: scroll;
+    }
+}
+
+/* Portrait mode for mobile */
+@media screen and (max-width: 1023px) and (orientation: portrait) {
+    .bg-image {
+        background-size: cover;
+    }
+}
+
+/* Landscape mode for mobile */
+@media screen and (max-width: 1023px) and (orientation: landscape) {
+    .bg-image {
+        background-size: cover;
     }
 }
 
