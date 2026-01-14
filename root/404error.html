@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        body {
+            background: #181818;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .error-container {
+            text-align: center;
+            background: #232323;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+            max-width: 500px;
+        }
+        .error-code {
+            font-size: 6rem;
+            font-weight: bold;
+            color: #2673ff;
+            margin: 0;
+            line-height: 1;
+        }
+        .error-message {
+            font-size: 1.5rem;
+            margin: 1rem 0 2rem 0;
+            color: #ccc;
+        }
+        .home-button {
+            background: #2673ff;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+        .home-button:hover {
+            background: #1451b8;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1 class="error-code">404</h1>
+        <p class="error-message">Oops! Page not found.</p>
+        <p>The page you're looking for doesn't exist or has been moved.</p>
+        <a href="index.html" class="home-button">Go Home</a>
+    </div>
+</body>
+</html> 
